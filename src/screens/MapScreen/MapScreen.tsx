@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native"
 import MapView, {PROVIDER_GOOGLE} from "react-native-maps"
 
-export const MapScreen = () => {
+export const MapScreen = (): React.JSX.Element => {
 
     
   return (
