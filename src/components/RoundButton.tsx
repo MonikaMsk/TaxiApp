@@ -1,5 +1,5 @@
 
-import { Pressable, StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { scale } from 'react-native-size-matters'
 import { shadow } from '../theme/Theme';
 import { insets } from "utils/Constants";

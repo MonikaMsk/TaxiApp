@@ -2,6 +2,7 @@ import { SafeAreaView, StyleSheet } from "react-native"
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps"
 import { useMapScreen } from "./useMapScreen"
 import { RoundButton } from "components/RoundButton";
+import { SearchBar } from "components/SearchBar";
 
 export const MapScreen = (): React.JSX.Element => {
 
@@ -18,6 +19,7 @@ export const MapScreen = (): React.JSX.Element => {
         showsCompass={false}
         showsMyLocationButton={false} />
       <RoundButton iconName="menu-outline"/>
+      <SearchBar />
     </SafeAreaView>
   )
 }
