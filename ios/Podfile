@@ -46,6 +46,7 @@ target 'TaxiApp' do
       Pod::UI.warn e
     end
   end
+
   config = use_native_modules!
 
   use_react_native!(

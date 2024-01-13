@@ -7,7 +7,6 @@ export const useMapScreen = () => {
   //map reference to center it based on the user location
   const mapRef = useRef<MapView>(null);
 
-  // user location state
   const [userLocation, setUserLocation] =
     useState<UserLocationChangeEvent['nativeEvent']['coordinate']>();
 
