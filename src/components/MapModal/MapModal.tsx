@@ -1,6 +1,7 @@
 
-import { Modal, StyleSheet, View } from "react-native"
-import { RoundButton } from "./RoundButton";
+import { FlatList, Modal, StyleSheet } from "react-native"
+import { RoundButton } from "../RoundButton";
+import { FlatListHeader } from "./components/FlatListHeader";
 
 
 type ModalProps = {
@@ -10,6 +11,9 @@ type ModalProps = {
 
 export const MapModal = ({ visible, closeModal }: ModalProps) => {
 
+    const rednerFlatListItems = () => {
+        return null;
+    }
 
 
     const handleButtonPress = () => {
@@ -18,7 +22,8 @@ export const MapModal = ({ visible, closeModal }: ModalProps) => {
 
     return (
         <Modal onRequestClose={closeModal} visible={visible} animationType="fade">
-                <RoundButton iconName="arrow-back-outline" onPress={handleButtonPress} />
+            <FlatList data={[]} renderItem={rednerFlatListItems} />
+            <RoundButton iconName="arrow-back-outline" onPress={handleButtonPress} />
         </Modal>
 
     )

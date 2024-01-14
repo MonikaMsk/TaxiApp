@@ -3,7 +3,7 @@ import MapView, { PROVIDER_GOOGLE } from "react-native-maps"
 import { useMapScreen } from "./useMapScreen"
 import { RoundButton } from "components/RoundButton";
 import { SearchBar } from "components/SearchBar";
-import { MapModal } from "components/MapModal";
+import { MapModal } from "components/MapModal/MapModal";
 
 export const MapScreen = (): React.JSX.Element => {
 
@@ -19,9 +19,9 @@ export const MapScreen = (): React.JSX.Element => {
         onUserLocationChange={operations.handleUserLocationChange}
         showsCompass={false}
         showsMyLocationButton={false} />
-      <RoundButton iconName="menu-outline"/>
-      <SearchBar onPress={operations.handleMapSearchBarPress}/>
-      <MapModal  closeModal={operations.closeMapModal} visible={models.modalVisible}/>
+      <RoundButton iconName="menu-outline" />
+      <SearchBar onPress={operations.handleMapSearchBarPress} />
+      <MapModal closeModal={operations.closeMapModal} visible={models.modalVisible} />
     </SafeAreaView>
   )
 }
