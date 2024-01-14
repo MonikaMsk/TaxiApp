@@ -9,6 +9,7 @@ export const useMapScreen = () => {
 
   const [userLocation, setUserLocation] =
     useState<UserLocationChangeEvent['nativeEvent']['coordinate']>();
+  const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
     if (userLocation) {
@@ -21,6 +22,9 @@ export const useMapScreen = () => {
     }
   }, [userLocation]);
 
+  const closeMapModal = () => {
+    setModalVisible(false);
+  };
 
   const handleUserLocationChange = ({
     nativeEvent: {coordinate},
@@ -28,9 +32,12 @@ export const useMapScreen = () => {
     setUserLocation(coordinate);
   };
 
-  // custom hook returns object
+  const handleMapSearchBarPress = () => {
+    setModalVisible(true);
+  };
+
   return {
-    models: {mapRef},
-    operations: {handleUserLocationChange},
+    models: {mapRef, modalVisible},
+    operations: {handleUserLocationChange, handleMapSearchBarPress, closeMapModal},
   };
 };
