@@ -4,6 +4,8 @@ const pallette = {
   white: '#fff',
   black: '#000',
   gray: 'rgba(34,34,34,0.8)',
+  lightGray: 'rgba(100,100,100,0.35)',
+  lighterGray: 'rgba(100,100,100, 0.1)',
 };
 
 export const colours = {
@@ -11,6 +13,15 @@ export const colours = {
     background: pallette.white,
     shadowDefault: pallette.black,
     text: pallette.gray,
+    textCommon: pallette.black,
+  },
+  textInput: {
+    disabledText: pallette.lightGray,
+    disabledBackground: pallette.lighterGray,
+    activeBackground: pallette.lightGray,
+  },
+  divider: {
+    backgroundColor: pallette.lightGray,
   },
 };
 

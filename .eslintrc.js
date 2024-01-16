@@ -34,7 +34,8 @@ module.exports = {
     ],
     "rules": {
          // turn on errors for missing imports
-    "import/no-unresolved": "error"
+    "import/no-unresolved": "error",
+    "comma-dangle": ["error", "never"],
     },
      "settings": {
     "import/parsers": {
