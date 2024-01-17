@@ -6,6 +6,7 @@ const pallette = {
   gray: 'rgba(34,34,34,0.8)',
   lightGray: 'rgba(100,100,100,0.35)',
   lighterGray: 'rgba(100,100,100, 0.1)',
+  blue: '#4a80f5',
 };
 
 export const colours = {
@@ -22,6 +23,10 @@ export const colours = {
   },
   divider: {
     backgroundColor: pallette.lightGray,
+  },
+  resultItem: {
+    iconBackground: pallette.blue,
+    iconTint: pallette.white,
   },
 };
 

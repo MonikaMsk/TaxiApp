@@ -1,18 +1,21 @@
+import { useSearchQuery } from "models/places/useSearchQuery"
 import { useState } from "react"
+import { useDebounce } from "use-debounce"
 
 
 export const useMapModal = () => {
 
     const [inputValue, setInputValue] = useState('')
+    const [debounceInputValue] = useDebounce(inputValue, 500)
+    const { response } = useSearchQuery(debounceInputValue)
+
 
     const handleInputTextChange = (value: string) => {
-        console.log(value);
-        
         setInputValue(value)
     }
 
     return {
-        models: {inputValue},
-        operations: {handleInputTextChange}
+        models: { inputValue, textSearchQueryResponseData: response?.results || [] },
+        operations: { handleInputTextChange }
     }
 }
