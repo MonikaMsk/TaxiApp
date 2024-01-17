@@ -7,5 +7,6 @@
       "tests": ["tests/*"],
       "@components/*": ["src/components/*"]
     }
-  }
+  },
+  "typeRoots": ["src/types"]
 }

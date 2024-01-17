@@ -1,3 +1,4 @@
+import {useUserLocationContext} from 'context/UserLocationContext';
 import {useEffect, useRef, useState} from 'react';
 import type {UserLocationChangeEvent} from 'react-native-maps';
 import type MapView from 'react-native-maps';
@@ -7,15 +8,15 @@ export const useMapScreen = () => {
   //map reference to center it based on the user location
   const mapRef = useRef<MapView>(null);
 
-  const [userLocation, setUserLocation] =
-    useState<UserLocationChangeEvent['nativeEvent']['coordinate']>();
   const [modalVisible, setModalVisible] = useState(false);
+
+  const {userLocation, setUserLocation} = useUserLocationContext();
 
   useEffect(() => {
     if (userLocation) {
       mapRef?.current?.animateToRegion({
-        longitude: userLocation.longitude,
-        latitude: userLocation.latitude,
+        longitude: userLocation.coordinates.longitude,
+        latitude: userLocation.coordinates.latitude,
         longitudeDelta: LONGITUDE_DELTA,
         latitudeDelta: LATITUDE_DELTA,
       });
@@ -29,7 +30,14 @@ export const useMapScreen = () => {
   const handleUserLocationChange = ({
     nativeEvent: {coordinate},
   }: UserLocationChangeEvent) => {
-    setUserLocation(coordinate);
+    if(coordinate){
+      setUserLocation({
+        coordinates: {
+          latitude: coordinate.latitude,
+          longitude: coordinate.longitude,
+        }
+      })
+    }
   };
 
   const handleMapSearchBarPress = () => {
@@ -38,6 +46,10 @@ export const useMapScreen = () => {
 
   return {
     models: {mapRef, modalVisible},
-    operations: {handleUserLocationChange, handleMapSearchBarPress, closeMapModal},
+    operations: {
+      handleUserLocationChange,
+      handleMapSearchBarPress,
+      closeMapModal,
+    },
   };
 };
