@@ -1,6 +1,6 @@
 import {useUserLocationContext} from 'context/UserLocationContext';
 import {useEffect, useRef, useState} from 'react';
-import type {UserLocationChangeEvent} from 'react-native-maps';
+import type {LatLng, UserLocationChangeEvent} from 'react-native-maps';
 import type MapView from 'react-native-maps';
 import {LATITUDE_DELTA, LONGITUDE_DELTA} from 'utils/Constants';
 
@@ -9,7 +9,7 @@ export const useMapScreen = () => {
   const mapRef = useRef<MapView>(null);
 
   const [modalVisible, setModalVisible] = useState(false);
-
+  const [mapMarkers, setMapMarkers] = useState<LatLng[] | []>([]);
   const {userLocation, setUserLocation} = useUserLocationContext();
 
   useEffect(() => {
@@ -30,13 +30,13 @@ export const useMapScreen = () => {
   const handleUserLocationChange = ({
     nativeEvent: {coordinate},
   }: UserLocationChangeEvent) => {
-    if(coordinate){
+    if (coordinate) {
       setUserLocation({
         coordinates: {
           latitude: coordinate.latitude,
           longitude: coordinate.longitude,
-        }
-      })
+        },
+      });
     }
   };
 
@@ -44,12 +44,27 @@ export const useMapScreen = () => {
     setModalVisible(true);
   };
 
+  const handleResultItemPress = (coordinates: LatLng) => {
+    return () => {
+      if (userLocation?.coordinates) {
+        setMapMarkers([userLocation?.coordinates, coordinates]);
+        setModalVisible(false);
+      }
+    };
+  };
+
   return {
-    models: {mapRef, modalVisible},
+    models: {
+      mapRef,
+      modalVisible,
+      mapMarkers,
+    },
+
     operations: {
       handleUserLocationChange,
       handleMapSearchBarPress,
       closeMapModal,
+      handleResultItemPress,
     },
   };
 };

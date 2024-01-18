@@ -3,7 +3,7 @@ export type TextSearchItem = {
   geometry: {
     location: {
       lat: number;
-      lng: Number;
+      lng: number;
     };
   };
   icon: string;

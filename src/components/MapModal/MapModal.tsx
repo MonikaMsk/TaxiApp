@@ -8,21 +8,23 @@ import { TextSearchItem } from "models/types/TextSearchItem";
 import { Spacer } from "components/Spacer";
 import { scale } from "react-native-size-matters";
 import { insets } from "utils/Constants";
+import { LatLng } from "react-native-maps";
 
 
 type ModalProps = {
     visible: boolean;
     closeModal: () => void;
+    onResultItemPress: (coordinates:LatLng) => () => void;
 }
 
 const itemSeparatorComponent = () => <Spacer height={scale(10)} />
 
-export const MapModal = ({ visible, closeModal }: ModalProps) => {
+export const MapModal = ({ visible, closeModal, onResultItemPress }: ModalProps) => {
 
     const { models, operations } = useMapModal();
 
     const rednerFlatListItems = ({ item }: { item: TextSearchItem }) => {
-        return <ResultItem name={item.name} iconUrl={item.icon} address={item.formatted_address} onPress={() => { }} />
+        return <ResultItem  key={item.place_id} name={item.name} iconUrl={item.icon} address={item.formatted_address} onPress={onResultItemPress({latitude: item.geometry.location.lat, longitude:item.geometry.location.lng})} />
     }
 
     const handleButtonPress = () => {
