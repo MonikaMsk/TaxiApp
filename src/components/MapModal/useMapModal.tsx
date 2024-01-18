@@ -8,6 +8,7 @@ export const useMapModal = () => {
     const [inputValue, setInputValue] = useState('')
     const [debounceInputValue] = useDebounce(inputValue, 500)
     const { response } = useSearchQuery(debounceInputValue)
+console.log(response);
 
 
     const handleInputTextChange = (value: string) => {

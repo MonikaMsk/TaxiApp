@@ -1,10 +1,13 @@
 
-import { FlatList, Modal, StyleSheet } from "react-native"
+import { FlatList, Modal, StyleSheet, View } from "react-native"
 import { RoundButton } from "../RoundButton";
 import { FlatListHeader } from "./components/FlatListHeader";
 import { useMapModal } from "./useMapModal";
 import { ResultItem } from "components/ResultItem";
 import { TextSearchItem } from "models/types/TextSearchItem";
+import { Spacer } from "components/Spacer";
+import { scale } from "react-native-size-matters";
+import { insets } from "utils/Constants";
 
 
 type ModalProps = {
@@ -12,12 +15,14 @@ type ModalProps = {
     closeModal: () => void;
 }
 
+const itemSeparatorComponent = () => <Spacer height={scale(10)} />
+
 export const MapModal = ({ visible, closeModal }: ModalProps) => {
 
-    const {models, operations} = useMapModal();
+    const { models, operations } = useMapModal();
 
-    const rednerFlatListItems = ({item}: {item: TextSearchItem}) => {
-        return <ResultItem name={item.name} iconUrl={item.icon} address={item.formatted_address} onPress={() => {}}/>
+    const rednerFlatListItems = ({ item }: { item: TextSearchItem }) => {
+        return <ResultItem name={item.name} iconUrl={item.icon} address={item.formatted_address} onPress={() => { }} />
     }
 
     const handleButtonPress = () => {
@@ -26,7 +31,9 @@ export const MapModal = ({ visible, closeModal }: ModalProps) => {
 
     return (
         <Modal onRequestClose={closeModal} visible={visible} animationType="fade">
-            <FlatList data={models.textSearchQueryResponseData} renderItem={rednerFlatListItems} ListHeaderComponent={<FlatListHeader  destinationValue={models.inputValue} onInputTextChange={operations.handleInputTextChange}/>}/>
+            <View style={styles.flastListView}>
+                <FlatList stickyHeaderIndices={[0]} data={models.textSearchQueryResponseData} ItemSeparatorComponent={itemSeparatorComponent} renderItem={rednerFlatListItems} ListHeaderComponent={<FlatListHeader destinationValue={models.inputValue} onInputTextChange={operations.handleInputTextChange} />} />
+            </View>
             <RoundButton iconName="arrow-back-outline" onPress={handleButtonPress} />
         </Modal>
 
@@ -35,7 +42,7 @@ export const MapModal = ({ visible, closeModal }: ModalProps) => {
 
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1
-    },
+    flastListView: {
+        paddingBottom: insets.bottom || scale(10),
+    }
 })

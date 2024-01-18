@@ -1,19 +1,19 @@
 PODS:
   - boost (1.83.0)
   - DoubleConversion (1.1.6)
-  - EXConstants (15.4.3):
+  - EXConstants (15.4.5):
     - ExpoModulesCore
-  - EXFont (11.10.1):
+  - EXFont (11.10.2):
     - ExpoModulesCore
   - EXLocation (16.5.2):
     - ExpoModulesCore
-  - Expo (50.0.0-preview.10):
+  - Expo (50.0.1):
     - ExpoModulesCore
-  - ExpoFileSystem (16.0.3):
+  - ExpoFileSystem (16.0.4):
     - ExpoModulesCore
-  - ExpoKeepAwake (12.8.1):
+  - ExpoKeepAwake (12.8.2):
     - ExpoModulesCore
-  - ExpoModulesCore (1.11.6):
+  - ExpoModulesCore (1.11.7):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -1300,13 +1300,13 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost: d3f49c53809116a5d38da093a8aa78bf551aed09
   DoubleConversion: fea03f2699887d960129cc54bba7e52542b6f953
-  EXConstants: c75664794a3060180cef4b16ec93cced4c6faa7d
-  EXFont: eb7c1f2e068b6583dce24b267941bf21e47fd684
+  EXConstants: 988aa430ca0f76b43cd46b66e7fae3287f9cc2fc
+  EXFont: 21b9c760abd593ce8f0d5386b558ced76018506f
   EXLocation: 6ec9c861af497b548f9617a5d4301884c4d43339
-  Expo: 6017117f2ba561b4bf0423a031891a63db935c90
-  ExpoFileSystem: 85832d6d4d283b2cfe09c4b76b8ba36d9d0251b0
-  ExpoKeepAwake: 3684cae50a2b11b45176f13c6bc41436e8ce869a
-  ExpoModulesCore: 8a1022f8eb4012e69223abf56d2b8db803fca76f
+  Expo: 08cf73d1f27103bdcdfba181c81469ac4b15ac5a
+  ExpoFileSystem: 39e454b8e7f2358ae2c8f8ec255fede4c3039493
+  ExpoKeepAwake: 0f5cad99603a3268e50af9a6eb8b76d0d9ac956c
+  ExpoModulesCore: f103ff1346136b2926e1654f32b3f45ab0b74830
   FBLazyVector: fbc4957d9aa695250b55d879c1d86f79d7e69ab4
   FBReactNativeSpec: 86de768f89901ef6ed3207cd686362189d64ac88
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9

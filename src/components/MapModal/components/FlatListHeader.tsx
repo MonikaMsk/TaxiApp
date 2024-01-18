@@ -25,10 +25,9 @@ export const FlatListHeader = ({destinationValue, onInputTextChange}: FlatListHe
                     <Spacer height={scale(10)} />
                     <UsersInput value={destinationValue} onChangeText={onInputTextChange}/>
                 </View>
+                    <Divider />
             </View>
-             <Spacer height={scale(10)} />
-            <Divider />
-           
+        <Spacer height={scale(10)}/>
         </>
     )
 }
@@ -44,5 +43,6 @@ const styles = StyleSheet.create({
     horizontalContainer: {
         flexDirection: 'column',
         width: width - scale(50),
+        marginBottom: scale(10),
     },
 })

@@ -9,7 +9,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-  [GMSServices provideAPIKey:@"AIzaSyAmHdOZvwmrlMPea3l5gGmvCqhzNQ4gXRg"]; // Google Maps API key
+  [GMSServices provideAPIKey:@""]; // Google Maps API key
 
 
   self.moduleName = @"TaxiApp";

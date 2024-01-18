@@ -33,8 +33,7 @@ export const UsersInput = ({ disabled, placeholder, onChangeText, value }: Users
             />
         )
     };
-
-
+    
     return returnInput();
 }
 

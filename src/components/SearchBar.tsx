@@ -10,8 +10,6 @@ type SearchBarProps = {
     onPress: () => void;
 }
 
- //
-
 export const SearchBar = ({onPress}: SearchBarProps) => {
 
     return (
