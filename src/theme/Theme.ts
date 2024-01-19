@@ -28,6 +28,9 @@ export const colours = {
     iconBackground: pallette.blue,
     iconTint: pallette.white,
   },
+  map: {
+    directionStroke: pallette.blue,
+  },
 };
 
 export const shadow = {

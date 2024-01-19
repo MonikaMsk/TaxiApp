@@ -4,6 +4,9 @@ import { useMapScreen } from "./useMapScreen"
 import { RoundButton } from "components/RoundButton";
 import { SearchBar } from "components/SearchBar";
 import { MapModal } from "components/MapModal/MapModal";
+import MapViewDirections from "react-native-maps-directions";
+import { GOOGLE_MAPS_API_KEY } from "@env";
+import { colours } from "theme/Theme";
 
 export const MapScreen = (): React.JSX.Element => {
 
@@ -11,8 +14,6 @@ export const MapScreen = (): React.JSX.Element => {
 
   const renderMapMarkers = () => {
     return models.mapMarkers.map((item, index) => {
-      console.log(item);
-      
       return <Marker coordinate={item} key={index} />
     })
   }
@@ -28,6 +29,13 @@ export const MapScreen = (): React.JSX.Element => {
         showsCompass={false}
         showsMyLocationButton={false}>
         {renderMapMarkers()}
+        <MapViewDirections
+          origin={models.mapMarkers[0]}
+          destination={models.mapMarkers[1]}
+          apikey={GOOGLE_MAPS_API_KEY}
+          strokeWidth={5}
+          strokeColor={colours.map.directionStroke}
+        />
       </MapView>
       <RoundButton iconName="menu-outline" />
       <SearchBar onPress={operations.handleMapSearchBarPress} />

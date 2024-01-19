@@ -1,5 +1,5 @@
 import {useUserLocationContext} from 'context/UserLocationContext';
-import {useEffect, useRef, useState} from 'react';
+import {useCallback, useEffect, useRef, useState} from 'react';
 import type {LatLng, UserLocationChangeEvent} from 'react-native-maps';
 import type MapView from 'react-native-maps';
 import {LATITUDE_DELTA, LONGITUDE_DELTA} from 'utils/Constants';
@@ -12,7 +12,7 @@ export const useMapScreen = () => {
   const [mapMarkers, setMapMarkers] = useState<LatLng[] | []>([]);
   const {userLocation, setUserLocation} = useUserLocationContext();
 
-  useEffect(() => {
+  const showUserLocation = useCallback(() => {
     if (userLocation) {
       mapRef?.current?.animateToRegion({
         longitude: userLocation.coordinates.longitude,
@@ -22,6 +22,10 @@ export const useMapScreen = () => {
       });
     }
   }, [userLocation]);
+
+  useEffect(() => {
+    showUserLocation();
+  }, []);
 
   const closeMapModal = () => {
     setModalVisible(false);

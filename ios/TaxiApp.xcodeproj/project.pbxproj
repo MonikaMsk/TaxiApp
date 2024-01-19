@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* TaxiAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TaxiAppTests.m */; };
-		13604B2DDC03170C16E6BE26 /* libPods-TaxiApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DC94182ED1A90997BF9221 /* libPods-TaxiApp.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1550050456BF60C0E6C49381 /* libPods-TaxiApp-TaxiAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 357D0F84CAE3425A37045A87 /* libPods-TaxiApp-TaxiAppTests.a */; };
 		19207CC72B51B3A1002C4E37 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19207CC62B51B3A1002C4E37 /* Ionicons.ttf */; };
 		1DB49F9C74DA9DDF119E70E1 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B0B08D2C0FF4ACC04C3F /* ExpoModulesProvider.swift */; };
+		4A9C5B27D927D9998F1D265F /* libPods-TaxiApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C09DEDBC77C91ED1CB66DF2 /* libPods-TaxiApp.a */; };
 		4EDD03C4DEB4D80318BA33D3 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FD35FC346EEA82D68A22A /* ExpoModulesProvider.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		A339EF3A176DFBE6CB8C98C1 /* libPods-TaxiApp-TaxiAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B349C00D9D51B3C123C563 /* libPods-TaxiApp-TaxiAppTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +33,6 @@
 		00E356EE1AD99517003FC87E /* TaxiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaxiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* TaxiAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaxiAppTests.m; sourceTree = "<group>"; };
-		02B349C00D9D51B3C123C563 /* libPods-TaxiApp-TaxiAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaxiApp-TaxiAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* TaxiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = TaxiApp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = TaxiApp/AppDelegate.mm; sourceTree = "<group>"; };
@@ -41,15 +40,16 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TaxiApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TaxiApp/main.m; sourceTree = "<group>"; };
 		19207CC62B51B3A1002C4E37 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
-		40DC94182ED1A90997BF9221 /* libPods-TaxiApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaxiApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		67918F191B7D192EB3E86AF0 /* Pods-TaxiApp-TaxiAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp-TaxiAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TaxiApp-TaxiAppTests/Pods-TaxiApp-TaxiAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		73AA78B56ED813BEBE306F4C /* Pods-TaxiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp.debug.xcconfig"; path = "Target Support Files/Pods-TaxiApp/Pods-TaxiApp.debug.xcconfig"; sourceTree = "<group>"; };
+		357D0F84CAE3425A37045A87 /* libPods-TaxiApp-TaxiAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaxiApp-TaxiAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7884E20B41EFB4CE56DF9C71 /* Pods-TaxiApp-TaxiAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp-TaxiAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TaxiApp-TaxiAppTests/Pods-TaxiApp-TaxiAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = TaxiApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8D5EFBB388CFD43326E8C482 /* Pods-TaxiApp-TaxiAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp-TaxiAppTests.release.xcconfig"; path = "Target Support Files/Pods-TaxiApp-TaxiAppTests/Pods-TaxiApp-TaxiAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		9C09DEDBC77C91ED1CB66DF2 /* libPods-TaxiApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaxiApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11FD35FC346EEA82D68A22A /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-TaxiApp-TaxiAppTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		B6832233E88F98BB6E1DEC6C /* Pods-TaxiApp-TaxiAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp-TaxiAppTests.release.xcconfig"; path = "Target Support Files/Pods-TaxiApp-TaxiAppTests/Pods-TaxiApp-TaxiAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		CC5DFD450AC3D5AC3F470C12 /* Pods-TaxiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp.debug.xcconfig"; path = "Target Support Files/Pods-TaxiApp/Pods-TaxiApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D952B0B08D2C0FF4ACC04C3F /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-TaxiApp/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		E19F89BB0A7704D3DF3FBD2A /* Pods-TaxiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp.release.xcconfig"; path = "Target Support Files/Pods-TaxiApp/Pods-TaxiApp.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		EDB2C661984F5BAB07A1D072 /* Pods-TaxiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp.release.xcconfig"; path = "Target Support Files/Pods-TaxiApp/Pods-TaxiApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A339EF3A176DFBE6CB8C98C1 /* libPods-TaxiApp-TaxiAppTests.a in Frameworks */,
+				1550050456BF60C0E6C49381 /* libPods-TaxiApp-TaxiAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13604B2DDC03170C16E6BE26 /* libPods-TaxiApp.a in Frameworks */,
+				4A9C5B27D927D9998F1D265F /* libPods-TaxiApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,8 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				40DC94182ED1A90997BF9221 /* libPods-TaxiApp.a */,
-				02B349C00D9D51B3C123C563 /* libPods-TaxiApp-TaxiAppTests.a */,
+				9C09DEDBC77C91ED1CB66DF2 /* libPods-TaxiApp.a */,
+				357D0F84CAE3425A37045A87 /* libPods-TaxiApp-TaxiAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -189,10 +189,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				73AA78B56ED813BEBE306F4C /* Pods-TaxiApp.debug.xcconfig */,
-				EDB2C661984F5BAB07A1D072 /* Pods-TaxiApp.release.xcconfig */,
-				67918F191B7D192EB3E86AF0 /* Pods-TaxiApp-TaxiAppTests.debug.xcconfig */,
-				8D5EFBB388CFD43326E8C482 /* Pods-TaxiApp-TaxiAppTests.release.xcconfig */,
+				CC5DFD450AC3D5AC3F470C12 /* Pods-TaxiApp.debug.xcconfig */,
+				E19F89BB0A7704D3DF3FBD2A /* Pods-TaxiApp.release.xcconfig */,
+				7884E20B41EFB4CE56DF9C71 /* Pods-TaxiApp-TaxiAppTests.debug.xcconfig */,
+				B6832233E88F98BB6E1DEC6C /* Pods-TaxiApp-TaxiAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -204,13 +204,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TaxiAppTests" */;
 			buildPhases = (
-				6DB4F662D98AC59DBAB4A661 /* [CP] Check Pods Manifest.lock */,
+				AAD8FB3F0CCEB9D279C6DAEC /* [CP] Check Pods Manifest.lock */,
 				8FDA4EE00052721080272428 /* [Expo] Configure project */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				17B4C54BDC2FC6A88223AE3B /* [CP] Embed Pods Frameworks */,
-				07BD14887FE1378153B7754C /* [CP] Copy Pods Resources */,
+				1A7280A1C27E27A1E68120DE /* [CP] Embed Pods Frameworks */,
+				3B679E06D3F3168463985741 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -226,14 +226,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TaxiApp" */;
 			buildPhases = (
-				C2BD943FF551181A88EAB0DD /* [CP] Check Pods Manifest.lock */,
+				B175673B72617E989293FBB6 /* [CP] Check Pods Manifest.lock */,
 				EF90E613C05052451481A19D /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				03F71E0DB47B2446EADE0750 /* [CP] Embed Pods Frameworks */,
-				E76795287157ECE90A83B5C5 /* [CP] Copy Pods Resources */,
+				03BEB9E57726880227A5A98E /* [CP] Embed Pods Frameworks */,
+				BCD5A2E6995DACEDAF022C91 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -317,7 +317,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		03F71E0DB47B2446EADE0750 /* [CP] Embed Pods Frameworks */ = {
+		03BEB9E57726880227A5A98E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -334,24 +334,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaxiApp/Pods-TaxiApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		07BD14887FE1378153B7754C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TaxiApp-TaxiAppTests/Pods-TaxiApp-TaxiAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TaxiApp-TaxiAppTests/Pods-TaxiApp-TaxiAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaxiApp-TaxiAppTests/Pods-TaxiApp-TaxiAppTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		17B4C54BDC2FC6A88223AE3B /* [CP] Embed Pods Frameworks */ = {
+		1A7280A1C27E27A1E68120DE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -368,26 +351,21 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaxiApp-TaxiAppTests/Pods-TaxiApp-TaxiAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6DB4F662D98AC59DBAB4A661 /* [CP] Check Pods Manifest.lock */ = {
+		3B679E06D3F3168463985741 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaxiApp-TaxiAppTests/Pods-TaxiApp-TaxiAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TaxiApp-TaxiAppTests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-TaxiApp-TaxiAppTests/Pods-TaxiApp-TaxiAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaxiApp-TaxiAppTests/Pods-TaxiApp-TaxiAppTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8FDA4EE00052721080272428 /* [Expo] Configure project */ = {
@@ -409,7 +387,29 @@
 			shellPath = /bin/sh;
 			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-TaxiApp-TaxiAppTests/expo-configure-project.sh\"\n";
 		};
-		C2BD943FF551181A88EAB0DD /* [CP] Check Pods Manifest.lock */ = {
+		AAD8FB3F0CCEB9D279C6DAEC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TaxiApp-TaxiAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B175673B72617E989293FBB6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -431,7 +431,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E76795287157ECE90A83B5C5 /* [CP] Copy Pods Resources */ = {
+		BCD5A2E6995DACEDAF022C91 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -502,7 +502,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67918F191B7D192EB3E86AF0 /* Pods-TaxiApp-TaxiAppTests.debug.xcconfig */;
+			baseConfigurationReference = 7884E20B41EFB4CE56DF9C71 /* Pods-TaxiApp-TaxiAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -531,7 +531,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D5EFBB388CFD43326E8C482 /* Pods-TaxiApp-TaxiAppTests.release.xcconfig */;
+			baseConfigurationReference = B6832233E88F98BB6E1DEC6C /* Pods-TaxiApp-TaxiAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -557,11 +557,12 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73AA78B56ED813BEBE306F4C /* Pods-TaxiApp.debug.xcconfig */;
+			baseConfigurationReference = CC5DFD450AC3D5AC3F470C12 /* Pods-TaxiApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YCX465LY8G;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TaxiApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -586,11 +587,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDB2C661984F5BAB07A1D072 /* Pods-TaxiApp.release.xcconfig */;
+			baseConfigurationReference = E19F89BB0A7704D3DF3FBD2A /* Pods-TaxiApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YCX465LY8G;
 				INFOPLIST_FILE = TaxiApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

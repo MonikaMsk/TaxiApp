@@ -2,7 +2,7 @@ import {GOOGLE_MAPS_API_KEY} from '@env';
 import axios, {AxiosResponse} from 'axios';
 import {useUserLocationContext} from 'context/UserLocationContext';
 import {useEffect, useState} from 'react';
-import type { TextSearchItem } from 'models/types/TextSearchItem';
+import type {TextSearchItem} from 'models/types/TextSearchItem';
 
 type TextSearchQueryResponse = AxiosResponse<{
   status: string;
@@ -17,7 +17,7 @@ export const useSearchQuery = (searchedQuery?: string) => {
 
   const fetchResponse = async (): Promise<void> => {
     try {
-      const {data} = await axios.get<any,TextSearchQueryResponse>(url, {
+      const {data} = await axios.get<any, TextSearchQueryResponse>(url, {
         params: {
           query: searchedQuery,
           location: `${userLocation?.coordinates.latitude}, ${userLocation?.coordinates.longitude}`,
@@ -33,6 +33,8 @@ export const useSearchQuery = (searchedQuery?: string) => {
   useEffect(() => {
     if (searchedQuery && searchedQuery !== '') {
       fetchResponse();
+    } else {
+      setResponse(undefined);
     }
   }, [
     searchedQuery,
