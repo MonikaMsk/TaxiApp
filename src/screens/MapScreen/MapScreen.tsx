@@ -1,5 +1,5 @@
 import { SafeAreaView, StyleSheet } from "react-native"
-import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps"
+import MapView, { Marker } from "react-native-maps"
 import { useMapScreen } from "./useMapScreen"
 import { RoundButton } from "components/RoundButton";
 import { SearchBar } from "components/SearchBar";
@@ -23,7 +23,7 @@ export const MapScreen = (): React.JSX.Element => {
       <MapView
         ref={models.mapRef}
         style={styles.map}
-        provider={PROVIDER_GOOGLE}
+        // provider={PROVIDER_GOOGLE}
         showsUserLocation
         onUserLocationChange={operations.handleUserLocationChange}
         showsCompass={false}
@@ -35,10 +35,15 @@ export const MapScreen = (): React.JSX.Element => {
           apikey={GOOGLE_MAPS_API_KEY}
           strokeWidth={5}
           strokeColor={colours.map.directionStroke}
+          onReady={operations.handleMapDirectionsReady}
         />
       </MapView>
-      <RoundButton iconName="menu-outline" />
-      <SearchBar onPress={operations.handleMapSearchBarPress} />
+      <RoundButton 
+      onPress={operations.handleRoundButtonPress}
+      iconName={models.isRouteVisible ? "arrow-back-outline" : "menu-outline" }/>
+      {
+        models.isRouteVisible ? null : (<SearchBar onPress={operations.handleMapSearchBarPress} />)
+      }
       <MapModal
         closeModal={operations.closeMapModal}
         visible={models.modalVisible}

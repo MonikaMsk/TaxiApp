@@ -30,9 +30,12 @@ module.exports = {
     "plugins": [
         "react",
         "react-native",
-        ["import"]
+        ["import"],
+         "react-hooks"
     ],
     "rules": {
+      "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn",// Checks effect dependencies
          // turn on errors for missing imports
     "import/no-unresolved": "error",
     "comma-dangle": ["error", "never"],

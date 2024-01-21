@@ -34,7 +34,14 @@ export const MapModal = ({ visible, closeModal, onResultItemPress }: ModalProps)
     return (
         <Modal onRequestClose={closeModal} visible={visible} animationType="fade">
             <View style={styles.flastListView}>
-                <FlatList stickyHeaderIndices={[0]} data={models.textSearchQueryResponseData} ItemSeparatorComponent={itemSeparatorComponent} renderItem={rednerFlatListItems} ListHeaderComponent={<FlatListHeader destinationValue={models.inputValue} onInputTextChange={operations.handleInputTextChange} />} />
+                <FlatList 
+                stickyHeaderIndices={[0]} 
+                keyboardShouldPersistTaps="always"
+                keyboardDismissMode="interactive"
+                data={models.textSearchQueryResponseData} 
+                ItemSeparatorComponent={itemSeparatorComponent} 
+                renderItem={rednerFlatListItems} 
+                ListHeaderComponent={<FlatListHeader destinationValue={models.inputValue} onInputTextChange={operations.handleInputTextChange} />} />
             </View>
             <RoundButton iconName="arrow-back-outline" onPress={handleButtonPress} />
         </Modal>
