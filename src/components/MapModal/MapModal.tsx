@@ -21,10 +21,15 @@ const itemSeparatorComponent = () => <Spacer height={scale(10)} />
 
 export const MapModal = ({ visible, closeModal, onResultItemPress }: ModalProps) => {
 
-    const { models, operations } = useMapModal();
+    const { models, operations } = useMapModal({onResultItemPress});
 
     const rednerFlatListItems = ({ item }: { item: TextSearchItem }) => {
-        return <ResultItem  key={item.place_id} name={item.name} iconUrl={item.icon} address={item.formatted_address} onPress={onResultItemPress({latitude: item.geometry.location.lat, longitude:item.geometry.location.lng})} />
+        return <ResultItem  
+        key={item.place_id} 
+        name={item.name} 
+        iconUrl={item.icon} 
+        address={item.formatted_address} 
+        onPress={operations.handlePlaceItemPress(item)} />
     }
 
     const handleButtonPress = () => {

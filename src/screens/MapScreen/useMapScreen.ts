@@ -65,12 +65,11 @@ export const useMapScreen = () => {
   };
 
   const handleResultItemPress = (coordinates: LatLng) => {
-    return () => {
       if (userLocation?.coordinates) {
         setMapMarkers([userLocation?.coordinates, coordinates]);
         setModalVisible(false);
       }
-    };
+   
   };
 
   const handleMapDirectionsReady = (routeInfo: MapDirectionsResponse) => {
