@@ -14,14 +14,14 @@ import { LatLng } from "react-native-maps";
 type ModalProps = {
     visible: boolean;
     closeModal: () => void;
-    onResultItemPress: (coordinates:LatLng) => () => void;
+    onResultItemPress: (coordinates:LatLng) => void;
 }
 
 const itemSeparatorComponent = () => <Spacer height={scale(10)} />
 
 export const MapModal = ({ visible, closeModal, onResultItemPress }: ModalProps) => {
 
-    const { models, operations } = useMapModal({onResultItemPress});
+    const { models, operations } = useMapModal({onResultItemPress, closeModal});
 
     const rednerFlatListItems = ({ item }: { item: TextSearchItem }) => {
         return <ResultItem  
@@ -32,12 +32,8 @@ export const MapModal = ({ visible, closeModal, onResultItemPress }: ModalProps)
         onPress={operations.handlePlaceItemPress(item)} />
     }
 
-    const handleButtonPress = () => {
-        closeModal()
-    }
-
     return (
-        <Modal onRequestClose={closeModal} visible={visible} animationType="fade">
+        <Modal onDismiss={operations.handleModalDismiss} onRequestClose={closeModal} visible={visible} animationType="fade">
             <View style={styles.flastListView}>
                 <FlatList 
                 stickyHeaderIndices={[0]} 
@@ -48,7 +44,7 @@ export const MapModal = ({ visible, closeModal, onResultItemPress }: ModalProps)
                 renderItem={rednerFlatListItems} 
                 ListHeaderComponent={<FlatListHeader destinationValue={models.inputValue} onInputTextChange={operations.handleInputTextChange} />} />
             </View>
-            <RoundButton iconName="arrow-back-outline" onPress={handleButtonPress} />
+            <RoundButton iconName="arrow-back-outline" onPress={operations.handleRoundButtonPress} />
         </Modal>
 
     )

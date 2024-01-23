@@ -6,7 +6,7 @@ import type { LatLng } from "react-native-maps"
 import { useDebounce } from "use-debounce"
 
 type useMapModalProps = {
-    onResultItemPress: (coordinates: LatLng) => () => void;
+    onResultItemPress: (coordinates: LatLng) => void;
     closeModal: () => void;
 }
 
@@ -35,11 +35,14 @@ export const useMapModal = ({ onResultItemPress, closeModal }: useMapModalProps)
 
     const handleRoundButtonPress = () => {
         closeModal();
+    }
+
+    const handleModalDismiss = () => {
         setInputValue('')
     }
 
     return {
         models: { inputValue, textSearchQueryResponseData: response?.results || searchHistoryItem },
-        operations: { handleInputTextChange, handlePlaceItemPress, handleRoundButtonPress }
+        operations: { handleInputTextChange, handlePlaceItemPress, handleRoundButtonPress, handleModalDismiss }
     }
 }
