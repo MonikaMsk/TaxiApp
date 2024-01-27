@@ -31,6 +31,10 @@ export const colours = {
   map: {
     directionStroke: pallette.blue,
   },
+  rideItem: {
+    selectedBorderColor: pallette.black,
+    borderColor: pallette.white,
+  },
 };
 
 export const shadow = {

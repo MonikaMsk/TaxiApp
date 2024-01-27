@@ -42,7 +42,14 @@ export const useMapModal = ({ onResultItemPress, closeModal }: useMapModalProps)
     }
 
     return {
-        models: { inputValue, textSearchQueryResponseData: response?.results || searchHistoryItem },
-        operations: { handleInputTextChange, handlePlaceItemPress, handleRoundButtonPress, handleModalDismiss }
+        models: { 
+            inputValue,
+            textSearchQueryResponseData: response?.results || searchHistoryItem },
+        operations: { 
+        handleInputTextChange,
+        handlePlaceItemPress,
+        handleRoundButtonPress,
+        handleModalDismiss 
+        }
     }
 }

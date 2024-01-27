@@ -7,6 +7,7 @@ import { MapModal } from "components/MapModal/MapModal";
 import MapViewDirections from "react-native-maps-directions";
 import { GOOGLE_MAPS_API_KEY } from "@env";
 import { colours } from "theme/Theme";
+import { ChooseRideBottomSheet } from "components/BottomSheet/ChooseRideBottomSheet";
 
 export const MapScreen = (): React.JSX.Element => {
 
@@ -38,9 +39,9 @@ export const MapScreen = (): React.JSX.Element => {
           onReady={operations.handleMapDirectionsReady}
         />
       </MapView>
-      <RoundButton 
-      onPress={operations.handleRoundButtonPress}
-      iconName={models.isRouteVisible ? "arrow-back-outline" : "menu-outline" }/>
+      <RoundButton
+        onPress={operations.handleRoundButtonPress}
+        iconName={models.isRouteVisible ? "arrow-back-outline" : "menu-outline"} />
       {
         models.isRouteVisible || models.modalVisible ? null : (<SearchBar onPress={operations.handleMapSearchBarPress} />)
       }
@@ -48,6 +49,10 @@ export const MapScreen = (): React.JSX.Element => {
         closeModal={operations.closeMapModal}
         visible={models.modalVisible}
         onResultItemPress={operations.handleResultItemPress} />
+
+      {models.isRouteVisible ? <ChooseRideBottomSheet onChange={operations.handleBottomSheetPosition} /> : null}
+
+
     </SafeAreaView>
   )
 }

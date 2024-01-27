@@ -4,7 +4,7 @@ import type {LatLng, UserLocationChangeEvent} from 'react-native-maps';
 import type MapView from 'react-native-maps';
 import {MapDirectionsResponse} from 'react-native-maps-directions';
 import {scale} from 'react-native-size-matters';
-import {LATITUDE_DELTA, LONGITUDE_DELTA, insets} from 'utils/Constants';
+import {LATITUDE_DELTA, LONGITUDE_DELTA, insets, mapRideSheetIndexToMapPadding} from 'utils/Constants';
 
 export const useMapScreen = () => {
   //map reference to center it based on the user location
@@ -30,17 +30,6 @@ export const useMapScreen = () => {
 
   useEffect(() => {
     showUserLocation();
-
-    if (mapDirections?.coordinates) {
-      mapRef.current?.fitToCoordinates(mapDirections?.coordinates, {
-        edgePadding: {
-          top: insets.top + scale(15),
-          bottom: scale(15),
-          left: scale(15),
-          right: scale(15),
-        },
-      });
-    }
   }, [showUserLocation, mapDirections?.coordinates]);
 
   const closeMapModal = () => {
@@ -83,6 +72,20 @@ export const useMapScreen = () => {
     }
   };
 
+  const handleBottomSheetPosition = (index: number) => {
+      if (mapDirections?.coordinates) {
+      mapRef.current?.fitToCoordinates(mapDirections?.coordinates, {
+        edgePadding: {
+          top: insets.top + scale(20),
+          bottom: mapRideSheetIndexToMapPadding[index],
+          left: scale(15),
+          right: scale(15),
+        },
+      });
+    }
+    
+  }
+
   return {
     models: {
       mapRef,
@@ -98,6 +101,7 @@ export const useMapScreen = () => {
       handleResultItemPress,
       handleMapDirectionsReady,
       handleRoundButtonPress,
+      handleBottomSheetPosition,
     },
   };
 };
