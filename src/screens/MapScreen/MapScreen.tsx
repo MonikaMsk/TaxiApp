@@ -42,7 +42,7 @@ export const MapScreen = (): React.JSX.Element => {
       onPress={operations.handleRoundButtonPress}
       iconName={models.isRouteVisible ? "arrow-back-outline" : "menu-outline" }/>
       {
-        models.isRouteVisible ? null : (<SearchBar onPress={operations.handleMapSearchBarPress} />)
+        models.isRouteVisible || models.modalVisible ? null : (<SearchBar onPress={operations.handleMapSearchBarPress} />)
       }
       <MapModal
         closeModal={operations.closeMapModal}

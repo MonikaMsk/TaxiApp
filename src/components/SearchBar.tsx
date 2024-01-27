@@ -4,23 +4,24 @@ import { insets, width } from "utils/Constants";
 import { scale } from "react-native-size-matters";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { TextComponent } from "./TextComponent";
+import Animated, { FadeInDown } from "react-native-reanimated";
 
 
 type SearchBarProps = {
     onPress: () => void;
 }
 
-export const SearchBar = ({onPress}: SearchBarProps) => {
+export const SearchBar = ({ onPress }: SearchBarProps) => {
 
     return (
-        <View style={styles.container}>
+        <Animated.View entering={FadeInDown} style={styles.container}>
             <Pressable onPress={onPress}>
                 <View style={styles.barStyle}>
-                     <Ionicons name="search-outline" size={scale(20)} style={styles.icon}/>
-                     <TextComponent version='default'>Where to?</TextComponent>
+                    <Ionicons name="search-outline" size={scale(20)} style={styles.icon} />
+                    <TextComponent version='default'>Where to?</TextComponent>
                 </View>
             </Pressable>
-        </View>
+        </Animated.View>
     )
 }
 
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         flexDirection: 'row'
     },
-    icon:{
+    icon: {
         marginRight: scale(20),
         marginLeft: scale(5),
     },
