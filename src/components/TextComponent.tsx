@@ -6,7 +6,7 @@ import { colours } from 'theme/Theme'
 
 
 type TextComponentProps = {
-    version: 'default' | 'title' | 'caption',
+    version: 'default' | 'title' | 'caption' | 'header' | 'body',
     children: string,
 }
 
@@ -21,6 +21,10 @@ export const TextComponent = ({ version, children }: TextComponentProps) => {
                 return <Text style={styles.title}>{children}</Text>
             case 'caption':
                 return <Text style={styles.caption}>{children}</Text>
+            case 'header':
+                return <Text style={styles.header}>{children}</Text>
+                 case 'body':
+                return <Text style={styles.header}>{children}</Text>
             default:
                 return <Text style={styles.default}>{children}</Text>
         }
@@ -44,6 +48,11 @@ const styles = StyleSheet.create({
     caption: {
         fontSize: scale(13),
         color: colours.common.text
+    },
+    header: {
+        fontSize: scale(15),
+        color: colours.common.text,
+        fontWeight: '500',
     }
 })
 

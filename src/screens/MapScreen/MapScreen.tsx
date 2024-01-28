@@ -50,7 +50,7 @@ export const MapScreen = (): React.JSX.Element => {
         visible={models.modalVisible}
         onResultItemPress={operations.handleResultItemPress} />
 
-      {models.isRouteVisible ? <ChooseRideBottomSheet onChange={operations.handleBottomSheetPosition} /> : null}
+      {models.isRouteVisible ? <ChooseRideBottomSheet onChange={operations.handleBottomSheetPosition} mapDirections={models.mapDirections}/> : null}
 
 
     </SafeAreaView>

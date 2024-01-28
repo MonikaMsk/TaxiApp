@@ -18,7 +18,7 @@ export const rideData: Section[] = [
 				price: {
 					perKm: 0.8,
 					perMinute: 0.5,
-					currenct: '€',
+					currency: '€',
 				},
 			},
 		],
@@ -35,7 +35,7 @@ export const rideData: Section[] = [
 				price: {
 					perKm: 1.2,
 					perMinute: 0.7,
-					currenct: '€',
+					currency: '€',
 				},
 			},
 		],
@@ -52,7 +52,7 @@ export const rideData: Section[] = [
 				price: {
 					perKm: 1,
 					perMinute: 0.7,
-					currenct: '€',
+					currency: '€',
 				},
 			},
 		],
@@ -69,7 +69,7 @@ export const rideData: Section[] = [
 				price: {
 					perKm: 0.9,
 					perMinute: 0.6,
-					currenct: '€',
+					currency: '€',
 				},
 			},
 		],
@@ -86,7 +86,7 @@ export const rideData: Section[] = [
 				price: {
 					perKm: 0.5,
 					perMinute: 0.4,
-					currenct: '€',
+					currency: '€',
 				},
 			},
 		],
@@ -103,7 +103,7 @@ export const rideData: Section[] = [
 				price: {
 					perKm: 0.3,
 					perMinute: 0.2,
-					currenct: '€',
+					currency: '€',
 				},
 			},
 		],

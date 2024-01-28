@@ -92,6 +92,7 @@ export const useMapScreen = () => {
       modalVisible,
       mapMarkers,
       isRouteVisible,
+      mapDirections
     },
 
     operations: {
