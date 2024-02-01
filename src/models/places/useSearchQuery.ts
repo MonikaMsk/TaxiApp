@@ -1,46 +1,46 @@
-import {GOOGLE_MAPS_API_KEY} from '@env';
-import axios, {AxiosResponse} from 'axios';
-import {useUserLocationContext} from 'context/UserLocationContext';
-import {useEffect, useState} from 'react';
-import type {TextSearchItem} from 'models/types/TextSearchItem';
+import { GOOGLE_MAPS_API_KEY } from '@env';
+import axios, { AxiosError, AxiosResponse } from 'axios';
+import { useUserLocationContext } from 'context/UserLocationContext';
+import { useEffect, useState } from 'react';
+import type { TextSearchItem } from 'models/types/TextSearchItem';
 
 type TextSearchQueryResponse = AxiosResponse<{
-  status: string;
-  results: TextSearchItem[];
+	status: string;
+	results: TextSearchItem[];
 }>;
 
 export const useSearchQuery = (searchedQuery?: string) => {
-  const [response, setResponse] = useState<TextSearchQueryResponse['data']>();
-  const {userLocation} = useUserLocationContext();
+	const [response, setResponse] = useState<TextSearchQueryResponse['data']>();
+	const { userLocation } = useUserLocationContext();
 
-  const url = 'https://maps.googleapis.com/maps/api/place/textsearch/json';
+	const url = 'https://maps.googleapis.com/maps/api/place/textsearch/json';
 
-  const fetchResponse = async (): Promise<void> => {
-    try {
-      const {data} = await axios.get<any, TextSearchQueryResponse>(url, {
-        params: {
-          query: searchedQuery,
-          location: `${userLocation?.coordinates.latitude}, ${userLocation?.coordinates.longitude}`,
-          key: GOOGLE_MAPS_API_KEY,
-        },
-      });
-      setResponse(data);
-    } catch (error) {
-      console.log('Error');
-    }
-  };
+	const fetchResponse = async (): Promise<void> => {
+		try {
+			const { data } = await axios.get<any, TextSearchQueryResponse>(url, {
+				params: {
+					query: searchedQuery,
+					location: `${userLocation?.coordinates.latitude}, ${userLocation?.coordinates.longitude}`,
+					key: GOOGLE_MAPS_API_KEY,
+				},
+			});
+			setResponse(data);
+		} catch (error: unknown) {
+			if (error instanceof AxiosError) {
+				console.warn('error');
+			} else {
+				console.warn('Error');
+			}
+		}
+	};
 
-  useEffect(() => {
-    if (searchedQuery && searchedQuery !== '') {
-      fetchResponse();
-    } else {
-      setResponse(undefined);
-    }
-  }, [
-    searchedQuery,
-    userLocation?.coordinates.latitude,
-    userLocation?.coordinates?.longitude,
-  ]);
+	useEffect(() => {
+		if (searchedQuery && searchedQuery !== '') {
+			fetchResponse();
+		} else {
+			setResponse(undefined);
+		}
+	}, [searchedQuery, userLocation?.coordinates.latitude, userLocation?.coordinates?.longitude]);
 
-  return {response};
+	return { response };
 };

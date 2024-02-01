@@ -12,18 +12,18 @@ type ChooseRideItemProps = {
     price: string;
     description: string;
     eta: number;
-    maxPassangers: number | null;
+    maxPassengers: number | null;
     selected: boolean;
     onPress: () => void;
     variant: "compact" | "expanded"
 }
 
-export const ChooseRideItem = ({ selected, onPress, title, maxPassangers, variant, eta, description, price }: ChooseRideItemProps) => {
+export const ChooseRideItem = ({ selected, onPress, title, maxPassengers, variant, eta, description, price }: ChooseRideItemProps) => {
     const styleSheet = styles(selected);
     const { date } = useDate();
     const isExtended = variant === 'expanded';
 
-const formattedETA = date.add(eta, "minutes").format("HH:mm")
+    const formattedETA = date.add(eta, "minutes").format("HH:mm")
 
     return (
         <Pressable style={styleSheet.container} onPress={onPress}>
@@ -34,9 +34,9 @@ const formattedETA = date.add(eta, "minutes").format("HH:mm")
                     <View style={styleSheet.iconContainer}>
                         <TextComponent version={"header"}>{title}</TextComponent>
                         <Spacer width={scale(5)} />
-                        {maxPassangers && (selected || isExtended) ? <>
+                        {maxPassengers && (selected || isExtended) ? <>
                             <Ionicons name="person" size={scale(14)} />
-                            <TextComponent version={"body"} >{maxPassangers?.toString()}</TextComponent>
+                            <TextComponent version={"body"} >{maxPassengers?.toString()}</TextComponent>
                         </> : null}
                     </View>
                     {!isExtended ? <TextComponent version={"body"}>{selected ? `${formattedETA} • ${eta} mins to arrival` : formattedETA}</TextComponent> : null}

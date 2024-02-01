@@ -8,7 +8,7 @@ export type RideItem = {
 	type: string;
 	description: string;
 	eta: number;
-	maxPassangers: number | null;
+	maxPassengers: number | null;
 	id: string;
 	price: RideItemPrice;
 };
