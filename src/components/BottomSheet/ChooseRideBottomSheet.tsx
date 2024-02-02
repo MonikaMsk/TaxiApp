@@ -2,7 +2,7 @@ import BottomSheet, { BottomSheetSectionList } from "@gorhom/bottom-sheet"
 import { snapPoints } from "utils/Constants"
 import { rideData } from "./mockData"
 import { ChooseRideItem } from "./components/ChooseRideItem"
-import { SectionListData, SectionListRenderItem } from "react-native"
+import { SectionListData, SectionListRenderItem, View } from "react-native"
 import { RideItem } from "types/rideItem"
 import { calculateRidePrice } from "utils/calculateRidePrice"
 import { MapDirectionsResponse } from "react-native-maps-directions"
@@ -54,7 +54,6 @@ export const ChooseRideBottomSheet = ({ onChange, mapDirections }: ChooseRideBot
                     renderSectionHeader={renderSectionHeader}
                     stickySectionHeadersEnabled={false}
                 />
-
             </BottomSheet>
             <Footer />
         </>
