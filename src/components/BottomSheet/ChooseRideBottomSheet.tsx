@@ -20,11 +20,11 @@ type ChooseRideBottomSheetProps = {
 
 export const ChooseRideBottomSheet = ({ onChange, mapDirections }: ChooseRideBottomSheetProps) => {
     const { models, operations } = useChooseRideBottomSheet({ onChange });
-    const isItemExpanded = models.snapIndex === 2;
+
 
 
     const renderSectionHeader = ({ section }: { section: SectionListData<RideItem> }) => {
-        return isItemExpanded ? <SectionHeader title={section.title} /> : null
+        return models.isItemExpanded ? <SectionHeader title={section.title} /> : null
     }
 
 
@@ -32,7 +32,7 @@ export const ChooseRideBottomSheet = ({ onChange, mapDirections }: ChooseRideBot
     const renderSectionItem: SectionListRenderItem<RideItem> = ({ item }) => {
         return <ChooseRideItem
             key={item.id}
-            variant={isItemExpanded ? "expanded" : "compact"}
+            variant={models.isItemExpanded ? "expanded" : "compact"}
             title={item.type}
             price={calculateRidePrice(item.price, mapDirections)}
             description={item.description}
@@ -55,7 +55,7 @@ export const ChooseRideBottomSheet = ({ onChange, mapDirections }: ChooseRideBot
                     stickySectionHeadersEnabled={false}
                 />
             </BottomSheet>
-            <Footer />
+            <Footer selectedRide={models.selectedRide} offset={models.footerOffset} />
         </>
     )
 

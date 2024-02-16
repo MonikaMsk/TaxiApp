@@ -1,14 +1,30 @@
-import { StyleSheet, View } from "react-native"
-import Animated from "react-native-reanimated";
+import { StyleSheet, Text, View } from "react-native"
+import Animated, { SharedValue, useAnimatedStyle, withTiming } from "react-native-reanimated";
 import { scale } from "react-native-size-matters";
 import { colours } from "theme/Theme";
 import { Divider } from "./Divider";
 import { Spacer } from "./Spacer";
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { TextComponent } from "./TextComponent";
+import { ActionButton } from "./ActionButton";
+import { RideItem } from "types/rideItem";
+import { insets } from "utils/Constants";
 
-export const Footer = () => {
+
+type FooterProps = {
+    selectedRide: RideItem,
+    offset: SharedValue<number>
+}
+
+export const Footer = ({ selectedRide, offset }: FooterProps) => {
+    const animatedStyles = useAnimatedStyle(() => {
+        return {
+            transform: [{ translateY: withTiming(offset.value) }]
+        }
+    })
+
     return (
-        <Animated.View style={styles.container}>
+        <Animated.View style={[animatedStyles, styles.container]} >
             <Divider />
             <Spacer height={scale(15)} />
             <View style={styles.horizontalContainer}>
@@ -18,7 +34,15 @@ export const Footer = () => {
                     </View>
                     <Ionicons name="briefcase-sharp" size={scale(14)} />
                 </View>
+                <View style={styles.textContainer}>
+                    <TextComponent version="smHeader">Personal</TextComponent>
+                    <TextComponent version="caption">Apple Pay</TextComponent>
+                </View>
+                <Ionicons name="chevron-forward" size={scale(14)} />
+                <Spacer height={scale(15)} />
             </View>
+            <Spacer height={scale(10)} />
+            <ActionButton text={`Choose: ${selectedRide.type}`} />
         </Animated.View>
     )
 }
@@ -27,9 +51,10 @@ export const Footer = () => {
 
 const styles = StyleSheet.create({
     container: {
-        height: scale(140),
+        height: scale(120) + (insets.bottom || scale(10)),
         width: '100%',
-        backgroundColor: colours.common.background,
+        //    backgroundColor: colours.common.background,
+        backgroundColor: 'pink',
         alignItems: 'center',
     },
     horizontalContainer: {
@@ -57,4 +82,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         left: scale(-8),
     },
+    textContainer: {
+        flex: 1,
+    },
+
 })

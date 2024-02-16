@@ -40,6 +40,10 @@ export const colours = {
 		footerLeftIconBackground: pallette.black,
 		leftIconColor: pallette.white,
 	},
+	actionButton: {
+		backgroundColor: pallette.black,
+		fontColor: pallette.white,
+	},
 };
 
 export const shadow = {

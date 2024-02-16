@@ -52,7 +52,6 @@ export const MapScreen = (): React.JSX.Element => {
 
       {models.isRouteVisible ? <ChooseRideBottomSheet onChange={operations.handleBottomSheetPosition} mapDirections={models.mapDirections}/> : null}
 
-
     </SafeAreaView>
   )
 }
@@ -62,7 +61,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   map: {
-    ...StyleSheet.absoluteFillObject,
+    flex: 1,
   }
 })
 
