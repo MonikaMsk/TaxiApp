@@ -27,7 +27,8 @@ export const SearchBar = ({ onPress }: SearchBarProps) => {
 
 const styles = StyleSheet.create({
     container: {
-        top: (insets.top + scale(15)) || scale(75),
+        top: (insets.top || scale(15)) + scale(60),
+        position: 'absolute',
         alignSelf: 'center',
     },
     barStyle: {

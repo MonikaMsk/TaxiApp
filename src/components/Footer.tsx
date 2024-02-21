@@ -53,8 +53,7 @@ const styles = StyleSheet.create({
     container: {
         height: scale(120) + (insets.bottom || scale(10)),
         width: '100%',
-        //    backgroundColor: colours.common.background,
-        backgroundColor: 'pink',
+        backgroundColor: colours.common.background,
         alignItems: 'center',
     },
     horizontalContainer: {

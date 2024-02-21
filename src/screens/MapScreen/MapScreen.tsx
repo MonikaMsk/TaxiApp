@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet } from "react-native"
+import { View, StyleSheet } from "react-native"
 import MapView, { Marker } from "react-native-maps"
 import { useMapScreen } from "./useMapScreen"
 import { RoundButton } from "components/RoundButton";
@@ -20,7 +20,7 @@ export const MapScreen = (): React.JSX.Element => {
   }
 
   return (
-    <SafeAreaView style={styles.mapContainer}>
+    <View style={styles.mapContainer}>
       <MapView
         ref={models.mapRef}
         style={styles.map}
@@ -39,20 +39,22 @@ export const MapScreen = (): React.JSX.Element => {
           onReady={operations.handleMapDirectionsReady}
         />
       </MapView>
+
+      {
+        models.isRouteVisible ? null : (<SearchBar onPress={operations.handleMapSearchBarPress} />)
+      }
       <RoundButton
         onPress={operations.handleRoundButtonPress}
         iconName={models.isRouteVisible ? "arrow-back-outline" : "menu-outline"} />
-      {
-        models.isRouteVisible || models.modalVisible ? null : (<SearchBar onPress={operations.handleMapSearchBarPress} />)
-      }
+
       <MapModal
         closeModal={operations.closeMapModal}
         visible={models.modalVisible}
         onResultItemPress={operations.handleResultItemPress} />
 
-      {models.isRouteVisible ? <ChooseRideBottomSheet onChange={operations.handleBottomSheetPosition} mapDirections={models.mapDirections}/> : null}
+      {models.isRouteVisible ? <ChooseRideBottomSheet onChange={operations.handleBottomSheetPosition} mapDirections={models.mapDirections} /> : null}
 
-    </SafeAreaView>
+    </View>
   )
 }
 

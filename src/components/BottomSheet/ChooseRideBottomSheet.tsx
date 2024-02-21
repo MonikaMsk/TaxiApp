@@ -10,6 +10,7 @@ import { useChooseRideBottomSheet } from "./useChooseRideBottomSheet"
 import { Header } from "components/BottomSheet/components/Header"
 import { SectionHeader } from "./components/SectionHeader"
 import { Footer } from "components/Footer"
+import { insets } from "utils/Constants"
 
 
 type ChooseRideBottomSheetProps = {
@@ -46,7 +47,7 @@ export const ChooseRideBottomSheet = ({ onChange, mapDirections }: ChooseRideBot
 
     return (
         <>
-            <BottomSheet index={1} onChange={operations.handleBottomSheetChange} snapPoints={snapPoints}>
+            <BottomSheet index={1} onChange={operations.handleBottomSheetChange} snapPoints={snapPoints(insets)}>
                 <BottomSheetSectionList
                     ListHeaderComponent={<Header />}
                     renderItem={renderSectionItem}
